@@ -9,7 +9,7 @@ from django.db import IntegrityError
 logger = logging.getLogger(__name__)
 
 
-@shared_task
+@shared_task(name="fetch_and_save_booking_events")
 def fetch_and_save_booking_events():
     url = 'http://localhost:8001/api/events/'
     while url:
